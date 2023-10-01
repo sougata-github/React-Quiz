@@ -1,7 +1,9 @@
+import DateCounter from "./components/DateCounter";
+
 const App = () => {
   return (
     <div>
-      <h1>Hello</h1>
+      <DateCounter />
     </div>
   );
 };
