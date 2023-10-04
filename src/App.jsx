@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from "react";
-import { Header, Main } from "./components";
+import { Header, Main, Loader, Error, Start, Question } from "./components";
 
 const initialState = {
   questions: [],
@@ -12,13 +12,15 @@ function reducer(state, action) {
       return { ...state, questions: action.payload, status: "ready" };
     case "dataFailed":
       return { ...state, status: "error" };
+    case "start":
+      return { ...state, status: "active" };
     default:
       return state;
   }
 }
 
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [{ questions, status }, dispatch] = useReducer(reducer, initialState);
 
   async function getQuestions() {
     try {
@@ -31,6 +33,8 @@ const App = () => {
     }
   }
 
+  const numQuestions = questions.length;
+
   //load questions on mount.
 
   useEffect(() => {
@@ -41,8 +45,12 @@ const App = () => {
     <div className="app">
       <Header />
       <Main>
-        <p>1/15</p>
-        <p>Questions?</p>
+        {status === "loading" && <Loader />}
+        {status === "error" && <Error />}
+        {status === "ready" && (
+          <Start numQuestions={numQuestions} dispatch={dispatch} />
+        )}
+        {status === "active" && <Question />}
       </Main>
     </div>
   );

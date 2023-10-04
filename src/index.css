@@ -35,10 +35,6 @@ body {
   justify-content: center;
 }
 
-.main {
-  width: 50rem;
-}
-
 .app-header {
   max-width: 100%;
   margin-bottom: 4rem;
@@ -50,12 +46,17 @@ body {
 }
 
 .error {
-  text-align: center;
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.6rem;
   font-weight: 500;
-  padding: 2rem;
+  padding: 1.8rem;
   background-color: #495057;
-  border-radius: 100px;
+  border-radius: 10px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 img {
@@ -261,6 +262,10 @@ progress {
 /* media for header */
 
 @media screen and (max-width: 750px) {
+  h1 {
+    font-size: 5rem;
+  }
+
   .app-header {
     gap: 1rem;
   }
@@ -273,5 +278,20 @@ progress {
 @media screen and (max-width: 550px) {
   .app-header {
     gap: 0.2rem;
+  }
+}
+
+/* media for start */
+
+@media screen and (max-width: 750px) {
+  .start {
+    text-align: center;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
   }
 }
