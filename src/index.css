@@ -43,10 +43,7 @@ body {
   justify-content: center;
   gap: 3rem;
   flex-wrap: wrap;
-<<<<<<< Updated upstream
   text-align: center;
-=======
->>>>>>> Stashed changes
 }
 
 .error {
@@ -273,13 +270,10 @@ progress {
 /* media for header */
 
 @media screen and (max-width: 750px) {
-<<<<<<< Updated upstream
   h1 {
     font-size: 5rem;
   }
 
-=======
->>>>>>> Stashed changes
   .app-header {
     gap: 1rem;
   }
@@ -293,7 +287,6 @@ progress {
   .app-header {
     gap: 0.2rem;
   }
-<<<<<<< Updated upstream
 
   img {
     width: 25%;
@@ -313,6 +306,4 @@ progress {
   h3 {
     font-size: 1.8rem;
   }
-=======
->>>>>>> Stashed changes
 }
