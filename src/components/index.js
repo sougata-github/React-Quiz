@@ -4,5 +4,6 @@ import Main from "./Main";
 import Loader from "./Loader";
 import Start from "./Start";
 import Question from "./Question";
+import NextButton from "./NextButton";
 
-export { Header, Error, Main, Loader, Start, Question };
+export { Header, Error, Main, Loader, Start, Question, NextButton };
