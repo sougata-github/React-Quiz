@@ -7,6 +7,7 @@ import {
   Start,
   Question,
   NextButton,
+  ProgressBar,
 } from "./components";
 
 const initialState = {
@@ -43,7 +44,7 @@ function reducer(state, action) {
 }
 
 const App = () => {
-  const [{ questions, status, index, answer }, dispatch] = useReducer(
+  const [{ questions, status, index, answer, points }, dispatch] = useReducer(
     reducer,
     initialState
   );
@@ -60,6 +61,10 @@ const App = () => {
   }
 
   const numQuestions = questions.length;
+  const maxPoints = questions.reduce(
+    (acc, question) => question.points + acc,
+    0
+  );
 
   //load questions on mount.
 
@@ -78,6 +83,13 @@ const App = () => {
         )}
         {status === "active" && (
           <>
+            <ProgressBar
+              answer={answer}
+              index={index}
+              numQuestions={numQuestions}
+              points={points}
+              maxPoints={maxPoints}
+            />
             <Question
               question={questions[index]}
               dispatch={dispatch}
