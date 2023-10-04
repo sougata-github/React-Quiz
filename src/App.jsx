@@ -77,7 +77,9 @@ const App = () => {
 
   async function getQuestions() {
     try {
-      const response = await fetch("http://localhost:3000/questions");
+      const response = await fetch(
+        "https://codingheroes.io/api-react-course-projects/questions.json"
+      );
       const data = await response.json();
       dispatch({ type: "dataReceived", payload: data });
     } catch (error) {
