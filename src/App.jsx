@@ -1,5 +1,4 @@
 import { useEffect, useReducer } from "react";
-<<<<<<< Updated upstream
 
 import {
   Header,
@@ -13,14 +12,10 @@ import {
   Finish,
   Timer,
 } from "./components";
-=======
-import { Header, Main } from "./components";
->>>>>>> Stashed changes
 
 const initialState = {
   questions: [],
   status: "loading", //loading,error,ready,active,finished
-<<<<<<< Updated upstream
   index: 0,
   answer: null,
   points: 0,
@@ -30,17 +25,12 @@ const initialState = {
 
 const timePerQuestion = 30;
 
-=======
-};
-
->>>>>>> Stashed changes
 function reducer(state, action) {
   switch (action.type) {
     case "dataReceived":
       return { ...state, questions: action.payload, status: "ready" };
     case "dataFailed":
       return { ...state, status: "error" };
-<<<<<<< Updated upstream
     case "start":
       return {
         ...state,
@@ -74,15 +64,12 @@ function reducer(state, action) {
         secondsRemaining: state.secondsRemaining - 1,
         status: state.secondsRemaining === 0 ? "finished" : state.status,
       };
-=======
->>>>>>> Stashed changes
     default:
       return state;
   }
 }
 
 const App = () => {
-<<<<<<< Updated upstream
   const [
     { questions, status, index, answer, points, highscore, secondsRemaining },
     dispatch,
@@ -93,13 +80,6 @@ const App = () => {
       const response = await fetch(
         "https://codingheroes.io/api-react-course-projects/questions.json"
       );
-=======
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  async function getQuestions() {
-    try {
-      const response = await fetch("http://localhost:3000/questions");
->>>>>>> Stashed changes
       const data = await response.json();
       dispatch({ type: "dataReceived", payload: data });
     } catch (error) {
@@ -108,15 +88,12 @@ const App = () => {
     }
   }
 
-<<<<<<< Updated upstream
   const numQuestions = questions.length;
   const maxPoints = questions.reduce(
     (acc, question) => question.points + acc,
     0
   );
 
-=======
->>>>>>> Stashed changes
   //load questions on mount.
 
   useEffect(() => {
@@ -127,7 +104,6 @@ const App = () => {
     <div className="app">
       <Header />
       <Main>
-<<<<<<< Updated upstream
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}
         {status === "ready" && (
@@ -166,10 +142,6 @@ const App = () => {
             dispatch={dispatch}
           />
         )}
-=======
-        <p>1/15</p>
-        <p>Questions?</p>
->>>>>>> Stashed changes
       </Main>
     </div>
   );
