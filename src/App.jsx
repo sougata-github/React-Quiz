@@ -4,6 +4,7 @@ import { Header, Main, Loader, Error, Start, Question } from "./components";
 const initialState = {
   questions: [],
   status: "loading", //loading,error,ready,active,finished
+  index: 0,
 };
 
 function reducer(state, action) {
@@ -20,7 +21,10 @@ function reducer(state, action) {
 }
 
 const App = () => {
-  const [{ questions, status }, dispatch] = useReducer(reducer, initialState);
+  const [{ questions, status, index }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
 
   async function getQuestions() {
     try {
@@ -50,7 +54,7 @@ const App = () => {
         {status === "ready" && (
           <Start numQuestions={numQuestions} dispatch={dispatch} />
         )}
-        {status === "active" && <Question />}
+        {status === "active" && <Question question={questions[index]} />}
       </Main>
     </div>
   );
