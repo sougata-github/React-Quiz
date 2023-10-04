@@ -6,6 +6,7 @@ import Start from "./Start";
 import Question from "./Question";
 import NextButton from "./NextButton";
 import ProgressBar from "./ProgressBar";
+import Finish from "./Finish";
 
 export {
   Header,
@@ -16,4 +17,5 @@ export {
   Question,
   NextButton,
   ProgressBar,
+  Finish,
 };
