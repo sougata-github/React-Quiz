@@ -7,6 +7,7 @@ import Question from "./Question";
 import NextButton from "./NextButton";
 import ProgressBar from "./ProgressBar";
 import Finish from "./Finish";
+import Timer from "./Timer";
 
 export {
   Header,
@@ -18,4 +19,5 @@ export {
   NextButton,
   ProgressBar,
   Finish,
+  Timer,
 };
