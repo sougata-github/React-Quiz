@@ -1,4 +1,4 @@
-const Finish = ({ points, maxPoints, highscore }) => {
+const Finish = ({ points, maxPoints, highscore, dispatch }) => {
   const percentage = (points / maxPoints) * 100;
 
   let emoji;
@@ -20,13 +20,20 @@ const Finish = ({ points, maxPoints, highscore }) => {
   }
 
   return (
-    <>
+    <div className="result-div">
       <p className="result">
         <span>{emoji}</span> You scored <strong>{points}</strong> out of{" "}
         {maxPoints} i.e {Math.ceil(percentage)}%
       </p>
       <p className="highscore">Highscore: {highscore} points</p>
-    </>
+
+      <button
+        className="btn btn-ui"
+        onClick={() => dispatch({ type: "restart" })}
+      >
+        Restart quiz
+      </button>
+    </div>
   );
 };
 

@@ -173,6 +173,13 @@ progress {
   transform: translateX(2rem);
 }
 
+.result-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .result {
   background-color: var(--color-theme);
   color: var(--color-light);

@@ -47,6 +47,8 @@ function reducer(state, action) {
         highscore:
           state.points > state.highscore ? state.points : state.highscore,
       };
+    case "restart":
+      return { ...initialState, questions: state.questions, status: "ready" };
     default:
       return state;
   }
@@ -111,7 +113,12 @@ const App = () => {
           </>
         )}
         {status === "finished" && (
-          <Finish points={points} maxPoints={maxPoints} highscore={highscore} />
+          <Finish
+            points={points}
+            maxPoints={maxPoints}
+            highscore={highscore}
+            dispatch={dispatch}
+          />
         )}
       </Main>
     </div>
