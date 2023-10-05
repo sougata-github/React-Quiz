@@ -1,3 +1,5 @@
+import "./error.css";
+
 const Error = () => {
   return (
     <p className="error">

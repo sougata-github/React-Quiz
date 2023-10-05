@@ -1,3 +1,5 @@
+import "./start.css";
+
 const Start = ({ numQuestions, dispatch }) => {
   return (
     <section className="start">

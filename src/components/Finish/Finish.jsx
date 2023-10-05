@@ -1,3 +1,5 @@
+import "./finish.css";
+
 const Finish = ({ points, maxPoints, highscore, dispatch }) => {
   const percentage = (points / maxPoints) * 100;
 

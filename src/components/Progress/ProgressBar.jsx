@@ -1,3 +1,5 @@
+import "./progress.css";
+
 const ProgressBar = ({ index, numQuestions, points, maxPoints, answer }) => {
   return (
     <header className="progress">

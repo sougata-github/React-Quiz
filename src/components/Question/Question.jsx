@@ -1,3 +1,5 @@
+import "./question.css";
+
 const Question = ({ question, dispatch, answer }) => {
   const hasAnswered = answer !== null;
 

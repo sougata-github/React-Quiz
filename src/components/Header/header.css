@@ -1,0 +1,34 @@
+.app-header {
+  max-width: 100%;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  .app-header {
+    gap: 1rem;
+  }
+
+  img {
+    width: 8rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .app-header {
+    gap: 0.2rem;
+  }
+
+  img {
+    width: 25%;
+  }
+}
