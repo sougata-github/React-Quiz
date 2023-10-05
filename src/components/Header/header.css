@@ -11,7 +11,7 @@
 
 @media screen and (max-width: 750px) {
   h1 {
-    font-size: 5rem;
+    font-size: 4.2rem;
   }
 
   .app-header {
@@ -19,16 +19,12 @@
   }
 
   img {
-    width: 8rem;
+    display: none;
   }
 }
 
 @media screen and (max-width: 550px) {
-  .app-header {
-    gap: 0.2rem;
-  }
-
-  img {
-    width: 25%;
+  h1 {
+    font-size: 3.6rem;
   }
 }

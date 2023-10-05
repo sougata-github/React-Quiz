@@ -23,3 +23,15 @@ progress {
   background-color: var(--color-theme);
   border-radius: 100px;
 }
+
+@media screen and (max-width: 1024px) {
+  .progress {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .progress {
+    margin-bottom: 2rem;
+  }
+}
