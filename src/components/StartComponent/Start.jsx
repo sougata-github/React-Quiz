@@ -1,6 +1,9 @@
+import { useQuiz } from "../../context/QuizContext";
 import "./start.css";
 
-const Start = ({ numQuestions, dispatch }) => {
+const Start = () => {
+  const { dispatch, numQuestions } = useQuiz();
+
   return (
     <section className="start">
       <h2>Welcome to The React Quiz!</h2>

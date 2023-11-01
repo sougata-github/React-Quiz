@@ -1,7 +1,11 @@
+import { useQuiz } from "../../context/QuizContext";
 import "./question.css";
 
-const Question = ({ question, dispatch, answer }) => {
+const Question = () => {
+  const { questions, index, answer, dispatch } = useQuiz();
   const hasAnswered = answer !== null;
+
+  const question = questions[index];
 
   return (
     <section>
